@@ -1,0 +1,1 @@
+minikube service simple-k8s-service

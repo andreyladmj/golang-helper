@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    app: myapp
+    type: backend-end
+
+spec:
+  template:
+    metadata:
+      name: simple-golang-server
+      labels:
+        app: goserver
+
+    spec:
+      containers:
+        - name: simplegolang
+          image: detixoroniliosla/golang:v1
+
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: goserver

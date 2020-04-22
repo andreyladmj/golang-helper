@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    io.kompose.service: simple-k8s-service
+  name: simple-k8s-service
+spec:
+  type: NodePort
+  ports:
+    - port: 9090
+  selector:
+    app: simple-k8s-server

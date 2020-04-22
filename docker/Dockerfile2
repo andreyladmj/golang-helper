@@ -1,0 +1,8 @@
+FROM scratch
+
+# copy our static linked executable
+#COPY --from=builder /go/bin/hello ./hello
+COPY main ./main
+#export CGO_ENABLED=0
+# tell how to run this container
+CMD ["./main"]
